@@ -1,0 +1,395 @@
+إعدادات عامة
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    direction: rtl;
+    background-color: #f5f8fc;
+    color: #172b4d;
+}
+
+/* رأس الموقع */
+header {
+    background-color: white;
+    border-bottom: 1px solid #e5eaf0;
+}
+
+/* شريط التنقل */
+nav {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 6%;
+    gap: 25px;
+}
+nav .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    color: #092b52;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+/* الشعار */
+nav img {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+}
+
+nav .brand span {
+    white-space: nowrap;
+}
+
+/* قائمة الروابط */
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: #123b73;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #d99b27;
+}
+
+/* زر تسجيل الدخول */
+nav > a:last-child {
+    background-color: #123b73;
+    color: white;
+    text-decoration: none;
+    padding: 13px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+nav > a:last-child:hover {
+    background-color: #d99b27;
+}
+
+/* القسم الرئيسي */
+.hero {
+    min-height: 550px;
+    background-image:
+        linear-gradient(
+            to left,
+            rgba(8, 42, 82, 0.95),
+            rgba(8, 42, 82, 0.45)
+        ),
+        url("../images/library.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+}
+
+/* محتوى الترحيب */
+.hero article {
+    max-width: 650px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 21px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* أزرار الـ Hero */
+.hero a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 28px;
+    margin-left: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: #d9a441;
+    color: #102f55;
+}
+
+.hero a:last-child {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.hero a:hover {
+    background-color: white;
+    color: #123b73;
+}
+
+.library-carousel {
+    max-width: 1180px;
+    margin: 28px auto 0;
+    padding: 0 20px;
+}
+
+.library-carousel .carousel-inner,
+.library-carousel img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* إحصائيات المكتبة */
+.statistics {
+    padding: 70px 8%;
+    text-align: center;
+    background-color: white;
+}
+
+.statistics h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #123b73;
+}
+
+.statistics article {
+    display: inline-block;
+    width: 21%;
+    margin: 1%;
+    padding: 30px 15px;
+    background-color: #f5f8fc;
+    border-radius: 12px;
+    border-bottom: 4px solid #d9a441;
+}
+
+.statistics h3 {
+    font-size: 32px;
+    color: #123b73;
+    margin-bottom: 10px;
+}
+
+.statistics p {
+    font-size: 17px;
+    color: #555;
+}
+
+/* قسم مميزات المكتبة */
+.features {
+    padding: 80px 8%;
+    text-align: center;
+    background-color: #eef5fc;
+}
+
+.features > header {
+    margin-bottom: 45px;
+}
+
+.features h2 {
+    font-size: 34px;
+    color: #123b73;
+    margin-bottom: 12px;
+}
+
+.features > header p {
+    font-size: 18px;
+    color: #666;
+}
+
+.features article {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    min-height: 190px;
+    margin: 1%;
+    padding: 35px 25px;
+    background-color: white;
+    border-radius: 14px;
+    border-top: 4px solid #d9a441;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.features article h3 {
+    color: #123b73;
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.features article p {
+    color: #555;
+    line-height: 1.9;
+    font-size: 16px;
+}
+
+/* Footer */
+footer {
+    background-color: #092b52;
+    color: white;
+    padding: 55px 8% 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+footer section,
+footer nav {
+    flex: 1;
+    min-width: 220px;
+}
+
+footer h2,
+footer h3 {
+    color: #d9a441;
+    margin-bottom: 15px;
+}
+
+footer p {
+    line-height: 1.8;
+    color: #e1e7ef;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer li {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #d9a441;
+}
+
+footer > p {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        text-align: center;
+        justify-content: center;
+        padding: 60px 5%;
+    }
+
+    .hero article {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .statistics article {
+        width: 45%;
+        margin: 2%;
+    }
+
+    .features article {
+        width: 45%;
+        margin: 2%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    nav img {
+        width: 58px;
+        height: 58px;
+    }
+    nav .brand span {
+        display: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav > a:last-child {
+        padding: 10px 18px;
+    }
+
+    .hero {
+        min-height: 500px;
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .hero a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .statistics {
+        padding: 50px 20px;
+    }
+
+    .statistics article {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .features {
+        padding: 50px 20px;
+    }
+
+    .features article {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
