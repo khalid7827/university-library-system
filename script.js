@@ -1,24 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("borrow-form");
-    const borrowDate = document.getElementById("borrow-date");
-    const returnDate = document.getElementById("return-date");
-    const today = new Date().toISOString().split("T")[0];
-    borrowDate.min = today;
-    returnDate.min = today;
-
-    form.addEventListener("submit", function (event) {
+    const students = [
+        { name: "أحمد محمد علي", id: "20260001", major: "تقنية المعلومات", status: "نشط" },
+        { name: "خالد وليد", id: "20260002", major: "علوم الحاسوب", status: "نشط" },
+        { name: "محمد عبدالله", id: "20260003", major: "الهندسة", status: "نشط" },
+        { name: "سارة أحمد", id: "20260004", major: "إدارة الأعمال", status: "نشط" },
+        { name: "علي حسن", id: "20260005", major: "الرياضيات", status: "غير نشط" },
+        { name: "فاطمة محمد", id: "20260006", major: "تقنية المعلومات", status: "نشط" }
+    ];
+    const body = document.getElementById("students-body");
+    const empty = document.getElementById("no-students");
+    function displayStudents(list) {
+        body.innerHTML = list.map((student, index) => `<tr><td>${index + 1}</td><td>${student.name}</td><td>${student.id}</td><td>${student.major}</td><td class="${student.status === "نشط" ? "active-status" : "inactive-status"}">${student.status}</td></tr>`).join("");
+        empty.hidden = list.length > 0;
+    }
+    displayStudents(students);
+    document.getElementById("student-search-form").addEventListener("submit", function (event) {
         event.preventDefault();
-        document.querySelectorAll(".error-message").forEach((item) => item.textContent = "");
-        document.querySelectorAll("input, select").forEach((item) => item.classList.remove("input-error"));
-        document.getElementById("success-message").textContent = "";
-        let valid = true;
-        const name = document.getElementById("student-name");
-        const id = document.getElementById("student-id");
-        const book = document.getElementById("book-name");
-        if (!name.value.trim()) { document.getElementById("student-error").textContent = "يرجى إدخال اسم الطالب."; name.classList.add("input-error"); valid = false; }
-        if (!/^\d+$/.test(id.value.trim())) { document.getElementById("id-error").textContent = "الرقم الجامعي يجب أن يحتوي على أرقام فقط."; id.classList.add("input-error"); valid = false; }
-        if (!book.value) { document.getElementById("book-error").textContent = "يرجى اختيار الكتاب."; book.classList.add("input-error"); valid = false; }
-        if (!borrowDate.value || !returnDate.value || returnDate.value <= borrowDate.value) { returnDate.classList.add("input-error"); valid = false; }
-        if (valid) { document.getElementById("success-message").textContent = "تم إرسال طلب الاستعارة بنجاح."; form.reset(); borrowDate.min = today; returnDate.min = today; }
+        const query = document.getElementById("student-search").value.trim().toLowerCase();
+        displayStudents(students.filter((student) => [student.name, student.id, student.major].some((value) => value.toLowerCase().includes(query))));
     });
+    document.getElementById("show-all").addEventListener("click", function () { document.getElementById("student-search").value = ""; displayStudents(students); });
 });

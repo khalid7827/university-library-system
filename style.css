@@ -1,8 +1,3 @@
-
- /* =========================
-   General
-   ========================= */
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,9 +12,7 @@ body {
 }
 
 
-/* =========================
-   Header
-   ========================= */
+/* Header */
 
 header {
     background-color: white;
@@ -68,7 +61,6 @@ header {
 .main-nav ul a {
     color: #123b73;
     text-decoration: none;
-
     font-weight: bold;
 }
 
@@ -88,14 +80,8 @@ header {
     text-decoration: none;
 }
 
-.login-button:hover {
-    background-color: #d9a441;
-}
 
-
-/* =========================
-   Page Title
-   ========================= */
+/* Page Title */
 
 .page-title {
     text-align: center;
@@ -123,236 +109,201 @@ header {
 
 .page-title p {
     color: #666;
-
-    font-size: 17px;
 }
 
 
-/* =========================
-   Borrow Section
-   ========================= */
+/* Statistics */
 
-.borrow-section {
+.statistics {
     max-width: 1100px;
 
-    margin: 50px auto;
+    margin: 45px auto;
 
     padding: 0 20px;
 
     display: grid;
 
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
 
-    gap: 30px;
+    gap: 25px;
 }
 
-
-/* =========================
-   Borrow Card
-   ========================= */
-
-.borrow-card {
+.statistics article {
     background-color: white;
 
-    padding: 35px;
+    padding: 30px;
 
-    border-radius: 15px;
+    text-align: center;
 
-    box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
 }
 
-.borrow-card > header {
-    background-color: transparent;
+.statistics i {
+    font-size: 35px;
 
-    border: none;
+    color: #d9a441;
 
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
-.borrow-card > header h2 {
+.statistics h2 {
     color: #123b73;
 
-    margin-bottom: 5px;
+    font-size: 32px;
 }
 
-.borrow-card > header p {
-    color: #777;
+.statistics p {
+    color: #666;
 }
 
 
-/* =========================
-   Form
-   ========================= */
+/* Tools */
 
-form {
-    width: 100%;
+.students-tools {
+    max-width: 1100px;
+
+    margin: 0 auto 35px;
+
+    padding: 0 20px;
+
+    display: flex;
+
+    align-items: end;
+
+    gap: 15px;
 }
 
-fieldset {
-    border: 1px solid #d9e1eb;
-
-    border-radius: 10px;
-
-    padding: 20px;
-
-    margin-bottom: 25px;
+.students-tools form {
+    flex: 1;
 }
 
-legend {
-    color: #123b73;
-
-    font-size: 18px;
-
-    font-weight: bold;
-
-    padding: 0 8px;
-}
-
-label {
+.students-tools label {
     display: block;
 
-    color: #333;
-
     font-weight: bold;
 
-    margin: 15px 0 7px;
+    color: #123b73;
+
+    margin-bottom: 7px;
 }
 
-input,
-select {
-    width: 100%;
+.students-tools input {
+    width: 75%;
 
     padding: 13px;
 
     border: 1px solid #ccd5e0;
 
     border-radius: 7px;
-
-    font-size: 16px;
-
-    background-color: white;
 }
 
-input:focus,
-select:focus {
-    outline: none;
-
-    border-color: #123b73;
-
-    box-shadow: 0 0 0 3px rgba(18, 59, 115, 0.1);
-}
-
-
-/* =========================
-   Validation
-   ========================= */
-
-.input-error {
-    border-color: #dc3545;
-}
-
-.error-message {
-    display: block;
-
-    min-height: 22px;
-
-    color: #dc3545;
-
-    font-size: 13px;
-}
-
-.success-message {
-    display: block;
-
-    margin-top: 20px;
-
-    padding: 14px;
-
-    border-radius: 8px;
-
-    background-color: #e8f7ee;
-
-    color: #198754;
-
-    text-align: center;
-
-    font-weight: bold;
-}
-
-
-/* =========================
-   Borrow Button
-   ========================= */
-
-.borrow-button {
-    width: 100%;
-
-    padding: 14px;
+.students-tools button {
+    padding: 13px 20px;
 
     border: none;
 
-    border-radius: 8px;
+    border-radius: 7px;
 
     background-color: #123b73;
 
     color: white;
-
-    font-size: 17px;
 
     font-weight: bold;
 
     cursor: pointer;
 }
 
-.borrow-button:hover {
+.students-tools button:hover {
     background-color: #d9a441;
 }
 
 
-/* =========================
-   Information
-   ========================= */
+/* Table */
 
-.borrow-info {
+.students-table {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 0 20px 60px;
+}
+
+.students-table > header {
+    background-color: transparent;
+
+    border: none;
+
+    margin-bottom: 20px;
+}
+
+.students-table h2 {
+    color: #123b73;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+th {
     background-color: #123b73;
 
     color: white;
 
-    padding: 30px;
+    padding: 15px;
 
-    border-radius: 15px;
-
-    height: fit-content;
+    text-align: right;
 }
 
-.borrow-info > i {
-    font-size: 35px;
+td {
+    padding: 14px;
 
-    color: #d9a441;
+    border-bottom: 1px solid #e5eaf0;
 
-    margin-bottom: 15px;
+    color: #555;
 }
 
-.borrow-info h2 {
-    margin-bottom: 15px;
+tbody tr:hover {
+    background-color: #f0f5fb;
 }
 
-.borrow-info ul {
-    padding-right: 20px;
+.active-status {
+    color: #198754;
+
+    font-weight: bold;
 }
-.borrow-info li {
-    margin-bottom: 12px;
+
+.inactive-status {
+    color: #dc3545;
+
+    font-weight: bold;
+}
+
+#no-students {
+    display: none;
+
+    text-align: center;
+
+    color: #dc3545;
+
+    padding: 25px;
 }
 
 
-/* =========================
-   Footer
-   ========================= */
+/* Footer */
 
 footer {
-    margin-top: 60px;
-
     padding: 45px 8% 20px;
 
     display: flex;
@@ -380,10 +331,6 @@ footer h3 {
     color: #d9a441;
 
     margin-bottom: 10px;
-}
-
-footer p {
-    color: #e1e7ef;
 }
 
 footer ul {
@@ -415,13 +362,10 @@ footer a:hover {
 }
 
 
-/* =========================
-   Responsive
-   ========================= */
+/* Responsive */
 
 @media (max-width: 900px) {
-
-    .main-nav {
+.main-nav {
         flex-direction: column;
     }
 
@@ -431,8 +375,18 @@ footer a:hover {
         justify-content: center;
     }
 
-    .borrow-section {
+    .statistics {
         grid-template-columns: 1fr;
+    }
+
+    .students-tools {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .students-tools input {
+        width: 100%;
     }
 }
 
@@ -456,8 +410,12 @@ footer a:hover {
         font-size: 32px;
     }
 
-    .borrow-card {
-        padding: 20px;
+    .students-table {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 700px;
     }
 
     footer {
@@ -465,12 +423,4 @@ footer a:hover {
 
         text-align: center;
     }
-}
-
-#success-message {
-    display: block;
-    margin-top: 18px;
-    color: #198754;
-    font-weight: bold;
-    text-align: center;
 }
