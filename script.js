@@ -1,23 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const students = [
-        { name: "أحمد محمد علي", id: "20260001", major: "تقنية المعلومات", status: "نشط" },
-        { name: "خالد وليد", id: "20260002", major: "علوم الحاسوب", status: "نشط" },
-        { name: "محمد عبدالله", id: "20260003", major: "الهندسة", status: "نشط" },
-        { name: "سارة أحمد", id: "20260004", major: "إدارة الأعمال", status: "نشط" },
-        { name: "علي حسن", id: "20260005", major: "الرياضيات", status: "غير نشط" },
-        { name: "فاطمة محمد", id: "20260006", major: "تقنية المعلومات", status: "نشط" }
-    ];
-    const body = document.getElementById("students-body");
-    const empty = document.getElementById("no-students");
-    function displayStudents(list) {
-        body.innerHTML = list.map((student, index) => `<tr><td>${index + 1}</td><td>${student.name}</td><td>${student.id}</td><td>${student.major}</td><td class="${student.status === "نشط" ? "active-status" : "inactive-status"}">${student.status}</td></tr>`).join("");
-        empty.hidden = list.length > 0;
-    }
-    displayStudents(students);
-    document.getElementById("student-search-form").addEventListener("submit", function (event) {
+    const form = document.getElementById("contact-form");
+    form.addEventListener("submit", function (event) {
         event.preventDefault();
-        const query = document.getElementById("student-search").value.trim().toLowerCase();
-        displayStudents(students.filter((student) => [student.name, student.id, student.major].some((value) => value.toLowerCase().includes(query))));
+        document.querySelectorAll("small").forEach((item) => item.textContent = "");
+        document.querySelectorAll("input, select, textarea").forEach((item) => item.classList.remove("input-error"));
+        document.getElementById("success-message").textContent = "";
+        let valid = true;
+        const name = document.getElementById("name");
+        const email = document.getElementById("email");
+        const subject = document.getElementById("subject");
+        const message = document.getElementById("message");
+        if (!name.value.trim()) { document.getElementById("name-error").textContent = "يرجى إدخال الاسم."; name.classList.add("input-error"); valid = false; }
+        if (!email.validity.valid) { document.getElementById("email-error").textContent = "يرجى إدخال بريد إلكتروني صحيح."; email.classList.add("input-error"); valid = false; }
+        if (!subject.value) { document.getElementById("subject-error").textContent = "يرجى اختيار الموضوع."; subject.classList.add("input-error"); valid = false; }
+        if (!message.value.trim()) { document.getElementById("message-error").textContent = "يرجى كتابة الرسالة."; message.classList.add("input-error"); valid = false; }
+        if (valid) { document.getElementById("success-message").textContent = "تم إرسال رسالتك بنجاح، شكرًا لتواصلك معنا."; form.reset(); }
     });
-    document.getElementById("show-all").addEventListener("click", function () { document.getElementById("student-search").value = ""; displayStudents(students); });
 });
