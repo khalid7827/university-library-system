@@ -1,4 +1,7 @@
-إعدادات عامة
+ /* =========================
+   General
+   ========================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,260 +10,553 @@
 
 body {
     font-family: Arial, sans-serif;
-    direction: rtl;
     background-color: #f5f8fc;
     color: #172b4d;
+    line-height: 1.7;
 }
 
-/* رأس الموقع */
-header {
-    background-color: white;
+
+/* =========================
+   Header
+   ========================= */
+
+body > header {
+    background-color: #123b73;
     border-bottom: 1px solid #e5eaf0;
 }
 
-/* شريط التنقل */
-nav {
+.main-nav {
     min-height: 90px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 6%;
+
     gap: 25px;
+    padding: 10px 6%;
 }
-nav .brand {
+
+.main-nav > a:first-child img {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+}
+.main-nav .brand {
     display: flex;
     align-items: center;
     gap: 10px;
     flex-shrink: 0;
-    color: #092b52;
+    color: #123b73;
     text-decoration: none;
     font-size: 17px;
     font-weight: 800;
 }
 
-/* الشعار */
-nav img {
-    width: 72px;
-    height: 72px;
-    object-fit: contain;
+body > header .main-nav .brand {
+    color: white;
 }
-
-nav .brand span {
+.main-nav .brand span {
     white-space: nowrap;
 }
 
-/* قائمة الروابط */
-nav ul {
+.main-nav ul {
     list-style: none;
+
     display: flex;
     align-items: center;
-    gap: 30px;
+
+    gap: 25px;
 }
 
-nav ul li a {
-    color: #123b73;
+.main-nav ul a {
+    color: white;
     text-decoration: none;
-    font-size: 17px;
+
+    font-size: 16px;
     font-weight: bold;
 }
 
-nav ul li a:hover {
-    color: #d99b27;
+.main-nav ul a:hover,
+.main-nav ul a.active {
+    color: #d9a441;
 }
 
-/* زر تسجيل الدخول */
-nav > a:last-child {
+.login-button {
     background-color: #123b73;
     color: white;
+
     text-decoration: none;
-    padding: 13px 22px;
+
+    padding: 11px 20px;
+
     border-radius: 8px;
+
     font-weight: bold;
 }
 
-nav > a:last-child:hover {
-    background-color: #d99b27;
-}
-
-/* القسم الرئيسي */
-.hero {
-    min-height: 550px;
-    background-image:
-        linear-gradient(
-            to left,
-            rgba(8, 42, 82, 0.95),
-            rgba(8, 42, 82, 0.45)
-        ),
-        url("../images/library.jpg");
-
-    background-size: cover;
-    background-position: center;
-
-    display: flex;
-    align-items: center;
-    padding: 70px 8%;
-}
-
-/* محتوى الترحيب */
-.hero article {
-    max-width: 650px;
-    color: white;
-}
-
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 21px;
-    line-height: 1.8;
-    margin-bottom: 30px;
-}
-
-/* أزرار الـ Hero */
-.hero a {
-    display: inline-block;
-    text-decoration: none;
-    padding: 14px 28px;
-    margin-left: 10px;
-    border-radius: 8px;
-    font-weight: bold;
+.login-button:hover {
     background-color: #d9a441;
-    color: #102f55;
 }
 
-.hero a:last-child {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-}
 
-.hero a:hover {
-    background-color: white;
-    color: #123b73;
-}
+/* =========================
+   Books Header
+   ========================= */
 
-.library-carousel {
-    max-width: 1180px;
-    margin: 28px auto 0;
-    padding: 0 20px;
-}
-
-.library-carousel .carousel-inner,
-.library-carousel img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-/* إحصائيات المكتبة */
-.statistics {
-    padding: 70px 8%;
+.books-header {
     text-align: center;
-    background-color: white;
-}
 
-.statistics h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
-    color: #123b73;
-}
+    padding: 70px 20px;
 
-.statistics article {
-    display: inline-block;
-    width: 21%;
-    margin: 1%;
-    padding: 30px 15px;
-    background-color: #f5f8fc;
-    border-radius: 12px;
-    border-bottom: 4px solid #d9a441;
-}
-
-.statistics h3 {
-    font-size: 32px;
-    color: #123b73;
-    margin-bottom: 10px;
-}
-
-.statistics p {
-    font-size: 17px;
-    color: #555;
-}
-
-/* قسم مميزات المكتبة */
-.features {
-    padding: 80px 8%;
-    text-align: center;
     background-color: #eef5fc;
 }
 
-.features > header {
-    margin-bottom: 45px;
+.books-header i {
+    font-size: 45px;
+    color: #d9a441;
+
+    margin-bottom: 15px;
 }
 
-.features h2 {
-    font-size: 34px;
+.books-header h1 {
+    font-size: 42px;
     color: #123b73;
+
     margin-bottom: 12px;
 }
 
-.features > header p {
-    font-size: 18px;
+.books-header p {
     color: #666;
+    font-size: 18px;
 }
 
-.features article {
-    display: inline-block;
-    vertical-align: top;
-    width: 30%;
-    min-height: 190px;
-    margin: 1%;
-    padding: 35px 25px;
+
+/* =========================
+   Search & Categories
+   ========================= */
+
+.book-controls {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 40px;
+
+    padding: 45px 8%;
+
     background-color: white;
-    border-radius: 14px;
-    border-top: 4px solid #d9a441;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
-.features article h3 {
+.book-controls form {
+    flex: 2;
+}
+
+.book-controls label {
+    display: block;
+
     color: #123b73;
-    font-size: 22px;
-    margin-bottom: 18px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
 }
 
-.features article p {
-    color: #555;
-    line-height: 1.9;
+.book-controls input {
+    width: 75%;
+
+    padding: 14px;
+
+    border: 1px solid #ccd5e0;
+
+    border-radius: 8px;
+
     font-size: 16px;
 }
 
-/* Footer */
-footer {
-    background-color: #092b52;
+.book-controls button {
+    padding: 14px 22px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #123b73;
+
     color: white;
-    padding: 55px 8% 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.book-controls button:hover {
+    background-color: #d9a441;
+}
+
+.book-controls aside {
+    flex: 1;
+}
+
+.book-controls aside h2 {
+    color: #123b73;
+
+    font-size: 20px;
+
+    margin-bottom: 12px;
+}
+
+.book-controls aside ul {
+    list-style: none;
+
     display: flex;
+
     flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.book-controls aside a {
+    display: block;
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    background-color: #eef5fc;
+
+    color: #123b73;
+
+    text-decoration: none;
+}
+
+.book-controls aside a:hover,
+.book-controls aside a.selected {
+    background-color: #123b73;
+
+    color: white;
+}
+
+
+/* =========================
+   Books Grid
+   ========================= */
+
+.books-list {
+    padding: 60px 8%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+.books-list > header {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    background-color: transparent;
+
+    border: none;
+
+    margin-bottom: 10px;
+}
+
+.books-list > header h2 {
+    color: #123b73;
+
+    font-size: 32px;
+
+    margin-bottom: 8px;
+}
+
+.books-list > header p {
+    color: #666;
+}
+
+
+/* =========================
+   Book Card
+   ========================= */
+
+.book-card {
+    background-color: white;
+
+    padding: 20px;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+.book-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background-color: #eef5fc;
+    color: #123b73;
+    font-size: 26px;
+}
+
+.book-cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 330px;
+    padding: 10px;
+    margin-bottom: 14px;
+    border: 1px solid #dce6f0;
+    border-radius: 10px;
+    background-color: #f4f8fc;
+}
+
+.book-card img {
+    width: 100%;
+
+    height: 310px;
+
+    object-fit: contain;
+
+    border-radius: 6px;
+}
+
+.book-card h3 {
+    color: #123b73;
+
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 12px;
+    border-right: 5px solid #d9a441;
+    border-radius: 6px;
+    background-color: #f7fbff;
+    font-size: 24px;
+    line-height: 1.45;
+    text-align: center;
+
+    margin-bottom: 14px;
+}
+
+.book-card p {
+    color: #555;
+
+    margin-bottom: 5px;
+}
+
+.book-card p i {
+    width: 20px;
+    color: #d9a441;
+}
+
+.available {
+    color: #198754;
+
+    font-weight: bold;
+}
+
+.borrowed {
+    color: #dc3545;
+
+    font-weight: bold;
+}
+
+.book-card button {
+    margin-top: 15px;
+
+    padding: 11px 20px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background-color: #123b73;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.book-card button:hover {
+    background-color: #d9a441;
+}
+
+
+/* =========================
+   No Results
+   ========================= */
+
+#no-results {
+    display: none;
+
+    text-align: center;
+
+    color: #dc3545;
+
+    font-size: 18px;
+
+    padding: 20px;
+}
+
+
+/* =========================
+   Modal
+   ========================= */
+
+.book-modal {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background-color: rgba(0, 0, 0, 0.65);
+
+    z-index: 2000;
+}
+
+.book-modal article {
+    position: relative;
+
+    width: min(600px, 100%);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 30px;
+
+    background-color: white;
+
+    border-radius: 16px;
+
+    text-align: right;
+}
+
+.book-modal header {
+    background-color: transparent;
+
+    border: none;
+
+    margin-bottom: 20px;
+}
+
+.book-modal header h2 {
+    color: #123b73;
+
+    font-size: 28px;
+}
+
+.book-modal img {
+    display: block;
+
+    width: 190px;
+
+    height: 250px;
+
+    object-fit: cover;
+
+    margin: 0 auto 25px;
+
+    border-radius: 10px;
+}
+
+.book-modal p {
+    color: #555;
+
+    margin-bottom: 12px;
+}
+
+.book-modal strong {
+    color: #123b73;
+}
+
+.close-modal {
+    position: absolute;
+
+    top: 12px;
+
+    left: 15px;
+
+    width: 38px;
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: #123b73;
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    background-color: #d9a441;
+}
+
+
+/* =========================
+   Footer
+   ========================= */
+
+footer {
+    display: flex;
+
+    flex-wrap: wrap;
+
     justify-content: space-between;
-    gap: 35px;
+
+    gap: 30px;
+
+    padding: 50px 8% 20px;
+
+    background-color: #092b52;
+
+    color: white;
 }
 
 footer section,
 footer nav {
     flex: 1;
+
     min-width: 220px;
 }
 
 footer h2,
 footer h3 {
     color: #d9a441;
-    margin-bottom: 15px;
+
+    margin-bottom: 12px;
 }
 
 footer p {
-    line-height: 1.8;
     color: #e1e7ef;
 }
 
@@ -269,11 +565,12 @@ footer ul {
 }
 
 footer li {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 footer a {
     color: white;
+
     text-decoration: none;
 }
 
@@ -281,115 +578,98 @@ footer a:hover {
     color: #d9a441;
 }
 
-footer > p {
+.copyright {
     width: 100%;
+
     text-align: center;
+
     border-top: 1px solid rgba(255, 255, 255, 0.2);
+
     padding-top: 20px;
-    margin-top: 20px;
 }
 
+
 /* =========================
-   Responsive Design
+   Responsive
    ========================= */
 
 @media (max-width: 900px) {
 
-    nav {
+    .main-nav {
         flex-direction: column;
+
+    .main-nav .brand span {
+        display: inline;
+    }
         padding: 20px;
     }
 
-    nav ul {
+    .main-nav ul {
         flex-wrap: wrap;
+
         justify-content: center;
-        gap: 15px;
     }
 
-    .hero {
-        text-align: center;
-        justify-content: center;
-        padding: 60px 5%;
+    .book-controls {
+        flex-direction: column;
+
+        align-items: stretch;
     }
 
-    .hero article {
-        max-width: 100%;
-    }
-
-    .hero h1 {
-        font-size: 38px;
-    }
-
-    .statistics article {
-        width: 45%;
-        margin: 2%;
-    }
-
-    .features article {
-        width: 45%;
-        margin: 2%;
+    .books-list {
+        grid-template-columns: 1fr;
     }
 }
 
 
 @media (max-width: 600px) {
-
-    nav img {
-        width: 58px;
-        height: 58px;
+    .main-nav .brand img {
+        width: 60px;
+        height: 60px;
     }
-    nav .brand span {
+    .main-nav .brand span {
         display: none;
     }
 
-    nav ul {
+    .main-nav ul {
         flex-direction: column;
-        gap: 12px;
+
+        gap: 10px;
     }
 
-    nav > a:last-child {
-        padding: 10px 18px;
+    .main-nav > a:first-child img {
+        width: 120px;
     }
 
-    .hero {
-        min-height: 500px;
+    .books-header h1 {
+        font-size: 32px;
+    }
+
+    .book-controls {
+        padding: 30px 20px;
+    }
+
+    .book-controls input {
+        width: 100%;
+
+        margin-bottom: 10px;
+    }
+
+    .book-controls button {
+        width: 100%;
+    }
+
+    .books-list {
         padding: 40px 20px;
     }
 
-    .hero h1 {
-        font-size: 30px;
-    }
-
-    .hero p {
-        font-size: 17px;
-    }
-
-    .hero a {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .statistics {
-        padding: 50px 20px;
-    }
-
-    .statistics article {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    .features {
-        padding: 50px 20px;
-    }
-
-    .features article {
-        width: 100%;
-        margin: 10px 0;
+    .book-card img {
+        height: 260px;
     }
 
     footer {
         flex-direction: column;
+
         text-align: center;
     }
 }
-

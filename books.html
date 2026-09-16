@@ -1,0 +1,333 @@
+ <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الكتب | المكتبة الجامعية</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS الخاص بالصفحة -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ================= Header ================= -->
+
+    <header>
+
+        <nav class="main-nav">
+
+            <a class="brand" href="../الصفحة الاولى/index.html">
+                <img src="images/logo.png" alt="شعار المكتبة الجامعية">
+                <span>المكتبة الجامعية</span>
+            </a>
+
+            <ul>
+
+                <li>
+                    <a href="../الصفحة الاولى/index.html">
+                        الرئيسية
+                    </a>
+                </li>
+
+                <li>
+                    <a class="active" href="books.html">
+                        الكتب
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../الصفحة الثالثة/borrow.html">
+                        استعارة الكتب
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../الصفحة الرابعة/students.html">
+                        الطلاب
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../الصفحة الخامسة/contact.html">
+                        تواصل معنا
+                    </a>
+                </li>
+
+            </ul>
+
+            <a class="login-button"
+               href="../تسجيل الدخول/login.html">
+                تسجيل الدخول
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= Main ================= -->
+
+    <main>
+
+        <!-- عنوان الصفحة -->
+
+        <section class="books-header">
+
+            <i class="fa-solid fa-book-open-reader"></i>
+
+            <h1>مكتبة الكتب</h1>
+
+            <p>
+                استكشف مجموعة الكتب والمراجع الأكاديمية
+                المتوفرة في المكتبة الجامعية.
+            </p>
+
+        </section>
+
+
+        <!-- البحث والتصنيف -->
+
+        <section class="book-controls">
+
+            <form id="search-form">
+
+                <label for="book-search">
+                    البحث عن كتاب
+                </label>
+
+                <input
+                    type="search"
+                    id="book-search"
+                    placeholder="اكتب اسم الكتاب أو المؤلف...">
+
+                <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    بحث
+                </button>
+
+            </form>
+
+
+            <aside>
+
+                <h2>
+                    <i class="fa-solid fa-layer-group"></i>
+                    التصنيفات
+                </h2>
+
+                <ul>
+
+                    <li>
+                        <a href="#" data-category="الكل">
+                            الكل
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" data-category="علوم الحاسوب">
+                            علوم الحاسوب
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" data-category="الهندسة">
+                            الهندسة
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" data-category="الرياضيات">
+                            الرياضيات
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" data-category="العلوم">
+                            العلوم
+                        </a>
+                    </li>
+
+                </ul>
+
+            </aside>
+
+        </section>
+
+
+        <!-- قائمة الكتب -->
+
+        <section class="books-list" id="books-list">
+
+            <header>
+                <h2>
+                    الكتب المتوفرة
+                </h2>
+
+                <p>
+                    اختر كتابًا لمعرفة المزيد من التفاصيل.
+                </p>
+
+            </header>
+
+            <!-- JavaScript سيضع الكتب هنا -->
+
+        </section>
+
+
+        <!-- رسالة عدم وجود نتائج -->
+
+        <p id="no-results">
+            لا توجد كتب مطابقة للبحث.
+        </p>
+
+
+        <!-- ================= Modal ================= -->
+
+        <section
+            class="book-modal"
+            id="book-modal"
+            aria-hidden="true">
+
+            <article>
+
+                <button
+                    type="button"
+                    class="close-modal"
+                    id="close-modal"
+                    aria-label="إغلاق">
+                    &times;
+                </button>
+
+                <header>
+
+                    <h2 id="modal-title">
+                        تفاصيل الكتاب
+                    </h2>
+
+                </header>
+
+                <img
+                    id="modal-image"
+                    src=""
+                    alt="صورة الكتاب">
+
+                <p>
+                    <strong>المؤلف:</strong>
+                    <span id="modal-author"></span>
+                </p>
+
+                <p>
+                    <strong>التصنيف:</strong>
+                    <span id="modal-category"></span>
+                </p>
+
+                <p>
+                    <strong>الحالة:</strong>
+                    <span id="modal-status"></span>
+                </p>
+
+                <p id="modal-description"></p>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= Footer ================= -->
+
+    <footer>
+
+        <section>
+
+            <h2>المكتبة الجامعية</h2>
+
+            <p>
+                بوابتك للوصول إلى المعرفة والكتب
+                والمراجع الأكاديمية.
+            </p>
+
+        </section>
+
+
+        <nav>
+
+            <h3>روابط سريعة</h3>
+
+            <ul>
+
+                <li>
+                    <a href="../الصفحة الاولى/index.html">
+                        الرئيسية
+                    </a>
+                </li>
+
+                <li>
+                    <a href="books.html">
+                        الكتب
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../الصفحة الثالثة/borrow.html">
+                        استعارة الكتب
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <section>
+
+            <h3>تواصل معنا</h3>
+
+            <p>
+                صنعاء - اليمن
+            </p>
+
+            <p>
+                library@example.com
+            </p>
+
+        </section>
+
+
+        <p class="copyright">
+            جميع الحقوق محفوظة &copy; 2026
+            المكتبة الجامعية
+        </p>
+
+    </footer>
+
+
+    <!-- Bootstrap -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- JavaScript الخاص بنا -->
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
