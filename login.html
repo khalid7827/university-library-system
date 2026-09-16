@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول | المكتبة الجامعية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+    <header class="site-header">
+        <nav class="main-nav" aria-label="التنقل الرئيسي">
+            <a class="brand" href="../الصفحة الاولى/index.html"><img src="images/logo.png" alt="شعار المكتبة الجامعية"><span>المكتبة الجامعية</span></a>
+            <a class="back-link" href="../الصفحة الاولى/index.html"><i class="fa-solid fa-arrow-left"></i> العودة للرئيسية</a>
+        </nav>
+    </header>
+    <main class="login-main">
+        <section class="login-panel" aria-labelledby="login-title">
+            <div class="login-icon"><i class="fa-solid fa-user"></i></div>
+            <p class="eyebrow">بوابة المكتبة الإلكترونية</p>
+            <h1 id="login-title">تسجيل الدخول</h1>
+            <p class="intro">أدخل بياناتك للوصول إلى خدمات الكتب والاستعارة.</p>
+            <form id="login-form" novalidate>
+                <label for="email">البريد الإلكتروني</label>
+                <input id="email" name="email" type="email" placeholder="name@university.edu" autocomplete="email" required>
+                <small id="email-error" class="error-message"></small>
+                <label for="password">كلمة المرور</label>
+                <div class="password-field">
+                    <input id="password" name="password" type="password" placeholder="أدخل كلمة المرور" autocomplete="current-password" required minlength="6">
+                    <button type="button" id="toggle-password" aria-label="إظهار كلمة المرور"><i class="fa-solid fa-eye"></i></button>
+                </div>
+                <small id="password-error" class="error-message"></small>
+                <button class="primary-button" type="submit"><i class="fa-solid fa-right-to-bracket"></i> تسجيل الدخول</button>
+                <output id="login-message" role="status"></output>
+            </form>
+            <div class="login-footer"><a href="../الصفحة الخامسة/contact.html">هل تحتاج إلى مساعدة؟</a><span>حسابات الطلاب وأعضاء المكتبة</span></div>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
