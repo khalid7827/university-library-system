@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استعارة الكتب | المكتبة الجامعية</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header><nav class="main-nav" aria-label="التنقل الرئيسي">
+    <a class="brand" href="../الصفحة الاولى/index.html"><img src="images/logo.png" alt="شعار المكتبة الجامعية"><span>المكتبة الجامعية</span></a>
+    <ul>
+        <li><a href="../الصفحة الاولى/index.html">الرئيسية</a></li>
+        <li><a href="../الصفحة الثانية/books.html">الكتب</a></li>
+        <li><a class="active" href="borrow.html">استعارة الكتب</a></li>
+        <li><a href="../الصفحة الرابعة/students.html">الطلاب</a></li>
+        <li><a href="../الصفحة الخامسة/contact.html">تواصل معنا</a></li>
+    </ul>
+    <a class="login-button" href="../تسجيل الدخول/login.html">تسجيل الدخول</a>
+</nav></header>
+<main>
+    <section class="page-title"><i class="fa-solid fa-book-bookmark"></i><h1>استعارة الكتب</h1><p>أرسل طلب استعارة كتاب من مكتبتنا الجامعية.</p></section>
+    <section class="borrow-section">
+        <article class="borrow-card">
+            <header><h2><i class="fa-solid fa-file-signature"></i> نموذج استعارة كتاب</h2><p>أدخل البيانات المطلوبة بشكل صحيح.</p></header>
+            <form id="borrow-form" novalidate>
+                <fieldset><legend>بيانات الطالب</legend>
+                    <label for="student-name">اسم الطالب</label><input type="text" id="student-name" placeholder="اكتب اسم الطالب" required><small class="error-message" id="student-error"></small>
+                    <label for="student-id">الرقم الجامعي</label><input type="text" id="student-id" placeholder="مثال: 20260001" inputmode="numeric" required><small class="error-message" id="id-error"></small>
+                </fieldset>
+                <fieldset><legend>بيانات الكتاب</legend>
+                    <label for="book-name">اختر الكتاب</label>
+                    <select id="book-name" required><option value="">-- اختر الكتاب --</option><option>أساسيات البرمجة</option><option>مبادئ الهندسة</option><option>الرياضيات المتقدمة</option><option>العلوم الطبيعية</option></select>
+                    <small class="error-message" id="book-error"></small>
+                    <label for="borrow-date">تاريخ الاستعارة</label><input type="date" id="borrow-date" required>
+                    <label for="return-date">تاريخ الإرجاع</label><input type="date" id="return-date" required>
+                </fieldset>
+                <button class="submit-button" type="submit"><i class="fa-solid fa-paper-plane"></i> إرسال الطلب</button>
+                <output id="success-message"></output>
+            </form>
+        </article>
+        <aside class="borrow-aside"><i class="fa-solid fa-circle-info"></i><h2>قبل إرسال الطلب</h2><p>تأكد من صحة الرقم الجامعي واختيار تاريخ إرجاع مناسب. مدة الاستعارة القياسية 14 يومًا.</p><a href="../الصفحة الثانية/books.html">تصفح الكتب المتاحة</a></aside>
+    </section>
+</main>
+<footer><p>المكتبة الجامعية - بوابتك إلى المعرفة</p><p>جميع الحقوق محفوظة &copy; 2026</p></footer>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
